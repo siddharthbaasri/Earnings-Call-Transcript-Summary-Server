@@ -10,7 +10,8 @@ CORS(app)
 @app.route('/')
 def test():
     return "server successfully hit"
-
+ 
+    
 @app.route('/upload', methods = ['POST', 'OPTIONS'])
 def upload_file():
     # return "Server successfully hit"
