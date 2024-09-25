@@ -3,3 +3,4 @@ groq
 PyPDF2
 langchain_text_splitters 
 flask-cors
+bs4

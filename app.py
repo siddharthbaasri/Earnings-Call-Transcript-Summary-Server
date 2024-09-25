@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import tempfile
 from file_processor import process_file
+from search import search
 import os
 
 app = Flask(__name__)
@@ -10,6 +11,13 @@ CORS(app)
 @app.route('/')
 def test():
     return "server successfully hit"
+
+@app.route("/search")
+def get_search_results():
+    link = request.args.get('q')
+    if not link:
+        return "No link was provided", 400
+    return search(link)
 
 @app.route('/upload', methods = ['POST', 'OPTIONS'])
 def upload_file():
