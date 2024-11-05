@@ -21,7 +21,6 @@ def get_search_results():
 
 @app.route('/upload', methods = ['POST', 'OPTIONS'])
 def upload_file():
-    # return "Server successfully hit"
     if 'file' not in request.files:
         return "No file part"
     file = request.files['file']
