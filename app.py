@@ -7,10 +7,6 @@ import os
 
 app = Flask(__name__)
 CORS(app)
-    
-@app.route('/')
-def test():
-    return "server successfully hit"
 
 @app.route("/search")
 def get_search_results():
